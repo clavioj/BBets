@@ -107,7 +107,7 @@ results[j]=bank
 }
 hist(results)
 ```
-The amount that Dr.J would have to pay to make this a fair bet is 
+The amount that Dr.J would have to pay to make this a fair bet is around $4.40
 
 
 
