@@ -63,9 +63,49 @@ hist(results)
 ```{r}
 favstats(results)
 ```
-The expected amount of money is `r mean(results)`  
+The expected amount of money is `r mean(results)`    
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
+
+
+# Fair odds pay off  
+
+```{r}
+results=vector("numeric")
+for(j in 1:1000){
+bank=0
+for(i in 1:637){
+  class= sample(daysYEAR,35,replace=TRUE)
+  n=length(unique(class))
+  if(n == 35)bank=bank-4.4
+  else bank =bank +1
+}
+results[j]=bank
+}
+hist(results)
+```
+The amount that Dr.J would have to pay to make this a fair bet is around $4.40  
+
+
+
+# Number of students for a fair bet
+
+```{r}
+results=vector("numeric")
+for(j in 1:1000){
+bank=0
+for(i in 1:637){
+  class= sample(daysYEAR,28,replace=TRUE)
+  n=length(unique(class))
+  if(n == 28)bank=bank-2
+  else bank =bank +1
+}
+results[j]=bank
+}
+hist(results)
+```
+The amount of students that it would take to make this a fair bet is around 28 students per class.  
+
 
 # Confidence interval of Brownlows earning  
 # 95% confidence interval  
@@ -91,49 +131,12 @@ lower confidence limit= `r lcl`
 upper confidence limit= `r ucl`  
 
 
-# Fair odds pay off  
-
-```{r}
-results=vector("numeric")
-for(j in 1:1000){
-bank=0
-for(i in 1:637){
-  class= sample(daysYEAR,35,replace=TRUE)
-  n=length(unique(class))
-  if(n == 35)bank=bank-4.4
-  else bank =bank +1
-}
-results[j]=bank
-}
-hist(results)
-```
-The amount that Dr.J would have to pay to make this a fair bet is around $4.40
-
-
-
-# Number of students for a fair bet
-
-```{r}
-results=vector("numeric")
-for(j in 1:1000){
-bank=0
-for(i in 1:637){
-  class= sample(daysYEAR,28,replace=TRUE)
-  n=length(unique(class))
-  if(n == 28)bank=bank-2
-  else bank =bank +1
-}
-results[j]=bank
-}
-hist(results)
-```
-The amount of students that it would take to make this a fair bet is around 28 students per class.
 
 # Discussion and Conclusion
 
-1. What are the fair odds for a bet on matching birthdays in a 35 person class.  
-2. For what size class is a 2:1 odds bet fair.  
-3. How much money would Brownlow be expected to end up with if the bets went as described.  
+With the results we get, his profit would be around $283.30 for a 35 person class.  
+Furthermore, if you wanted to get a fair bet for a class of 35, we would need it to be around $4.40 instead of $2.00.  
+Lastly, to make that 2:1 class fair, that class would need to be around 28 students instead of 35.  
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
